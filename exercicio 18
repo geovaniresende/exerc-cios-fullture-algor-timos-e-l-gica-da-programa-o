@@ -1,0 +1,22 @@
+var nomes = [];
+
+for (var i = 0; i < 10; i++) {
+    var nome = prompt("Digite o nome da pessoa " + (i + 1) + ":");
+    nomes.push(nome);
+}
+
+var nomeProcurado = prompt("Digite um nome para verificar se está na lista:");
+
+var encontrado = false;
+for (var j = 0; j < nomes.length; j++) {
+    if (nomeProcurado === nomes[j]) {
+        encontrado = true;
+        break;
+    }
+}
+
+if (encontrado) {
+    console.log("ACHEI");
+} else {
+    console.log("NÃO ACHEI");
+}

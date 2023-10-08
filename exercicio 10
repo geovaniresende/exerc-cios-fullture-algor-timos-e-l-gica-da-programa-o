@@ -1,0 +1,39 @@
+var quantidadeAlunos = parseInt(prompt("Informe a quantidade de alunos:"));
+
+var notasEMedias = [];
+
+var alunosAprovados = 0;
+var alunosReprovados = 0;
+
+for (var i = 1; i <= quantidadeAlunos; i++) {
+    var notas = [];
+    var somaNotas = 0;
+
+    for (var j = 1; j <= 4; j++) {
+        var nota = parseFloat(prompt("Informe a nota " + j + " do Aluno " + i + ":"));
+        notas.push(nota);
+        somaNotas += nota;
+    }
+
+    var media = somaNotas / 4;
+    notas.push(media);
+    notasEMedias.push(notas);
+
+    if (media >= 6) {
+        alunosAprovados++;
+    } else {
+        alunosReprovados++;
+    }
+}
+
+var porcentagemAprovados = (alunosAprovados / quantidadeAlunos) * 100;
+
+for (var k = 0; k < quantidadeAlunos; k++) {
+    var aluno = notasEMedias[k];
+    var status = aluno[4] >= 6 ? "Aprovado" : "Reprovado";
+    console.log("O Aluno " + (k + 1) + " foi " + status + " com média " + aluno[4].toFixed(2));
+}
+
+console.log("Quantidade de alunos aprovados: " + alunosAprovados);
+console.log("Quantidade de alunos reprovados: " + alunosReprovados);
+console.log("Porcentagem de alunos aprovados: " + porcentagemAprovados.toFixed(2) +

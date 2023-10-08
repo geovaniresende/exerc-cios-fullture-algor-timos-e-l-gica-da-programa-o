@@ -1,0 +1,8 @@
+var custoDeFabrica = parseFloat(prompt("Digite o custo de fábrica do carro:"));
+
+var percentualDistribuidor = 0.28; // 28%
+var percentualImpostos = 0.45; // 45%
+
+var custoFinal = custoDeFabrica + (custoDeFabrica * percentualDistribuidor) + (custoDeFabrica * percentualImpostos);
+
+console.log("O custo final ao consumidor é de R$" + custoFinal.toFixed(2));

@@ -1,0 +1,29 @@
+var maiorAltura = -Infinity;
+var menorAltura = Infinity;
+var somaPesos = 0;
+
+var quantidadePessoas = parseInt(prompt("Informe a quantidade de pessoas não monitoradas:"));
+
+for (var i = 1; i <= quantidadePessoas; i++) {
+    var peso = parseFloat(prompt("Informe o peso da pessoa " + i + " (em kg):"));
+    var altura = parseFloat(prompt("Informe a altura da pessoa " + i + " (em metros):"));
+
+    if (peso === 0) {
+        break;
+    }
+
+    if (altura > maiorAltura) {
+        maiorAltura = altura;
+    }
+    if (altura < menorAltura) {
+        menorAltura = altura;
+    }
+
+    somaPesos += peso;
+}
+
+var mediaPesos = somaPesos / (i - 1);
+
+console.log("Maior altura informada: " + maiorAltura.toFixed(2) + " metros");
+console.log("Menor altura informada: " + menorAltura.toFixed(2) + " metros");
+console.log("Média dos pesos informados: " + mediaPesos.toFixed(2) + " kg");

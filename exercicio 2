@@ -1,0 +1,15 @@
+var numeroCarrosVendidos = parseInt(prompt("Digite o número de carros vendidos:"));
+
+var valorTotalVendas = parseFloat(prompt("Digite o valor total das vendas:"));
+
+var salarioFixo = parseFloat(prompt("Digite o salário fixo:"));
+
+var valorPorCarroVendido = parseFloat(prompt("Digite o valor por carro vendido:"));
+
+var comissaoCarros = numeroCarrosVendidos * valorPorCarroVendido;
+
+var comissaoVendas = (valorTotalVendas * 0.05);
+
+var salarioFinal = salarioFixo + comissaoCarros + comissaoVendas;
+
+console.log("O salário final do vendedor é: R$" + salarioFinal.toFixed(2));

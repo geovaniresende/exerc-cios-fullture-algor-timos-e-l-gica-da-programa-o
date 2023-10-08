@@ -1,0 +1,19 @@
+var numeros = [];
+
+for (var i = 0; i < 5; i++) {
+    var numero = parseInt(prompt("Digite um número inteiro:"));
+    numeros.push(numero);
+}
+
+var maior = Math.max.apply(null, numeros);
+
+var menor = Math.min.apply(null, numeros);
+
+var soma = 0;
+for (var j = 0; j < numeros.length; j++) {
+    soma += numeros[j];
+}
+
+console.log("O maior número é: " + maior);
+console.log("O menor número é: " + menor);
+console.log("A soma dos números é: " + soma);

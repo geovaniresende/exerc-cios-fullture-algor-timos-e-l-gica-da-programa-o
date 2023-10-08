@@ -1,0 +1,40 @@
+var sexos = [];
+var alturas = [];
+
+var maiorAltura = 0;
+var somaAlturasMulheres = 0;
+var quantidadeHomens = 0;
+var menorAlturaHomens = Infinity;
+
+while (true) {
+    var sexo = prompt("Informe o sexo (M ou F) da pessoa (ou digite 0 para encerrar):");
+
+    if (sexo === "0") {
+        break;
+    }
+
+    var altura = parseFloat(prompt("Informe a altura da pessoa em metros:"));
+
+    sexos.push(sexo);
+    alturas.push(altura);
+
+    if (altura > maiorAltura) {
+        maiorAltura = altura;
+    }
+
+    if (sexo === "F") {
+        somaAlturasMulheres += altura;
+    } else if (sexo === "M") {
+        quantidadeHomens++;
+        if (altura < menorAlturaHomens) {
+            menorAlturaHomens = altura;
+        }
+    }
+}
+
+var mediaAlturasMulheres = somaAlturasMulheres / sexos.filter(sexo => sexo === "F").length;
+
+console.log("Maior altura informada: " + maiorAltura.toFixed(2) + " metros");
+console.log("Média das alturas das mulheres: " + mediaAlturasMulheres.toFixed(2) + " metros");
+console.log("Quantidade de homens: " + quantidadeHomens);
+console.log("Menor altura dos homens: " + menorAlturaHomens.toFixed(2) + " metros");

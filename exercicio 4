@@ -1,0 +1,19 @@
+function lerNota() {
+    var nota;
+    do {
+        nota = parseFloat(prompt("Digite uma nota (entre 0 e 10):"));
+    } while (isNaN(nota) || nota < 0 || nota > 10);
+    return nota;
+}
+
+var continuar;
+do {
+    var nota1 = lerNota();
+    var nota2 = lerNota();
+
+    var media = (nota1 + nota2) / 2;
+
+    console.log("Média do aluno: " + media.toFixed(2));
+
+    continuar = prompt("Deseja calcular a média para outro aluno? (SIM ou NÃO)").toUpperCase();
+} while (continuar === "SIM");

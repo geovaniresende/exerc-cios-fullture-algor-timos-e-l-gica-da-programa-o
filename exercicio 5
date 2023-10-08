@@ -1,0 +1,13 @@
+var indicePoluicao = parseFloat(prompt("Informe o índice de poluição medido:"));
+
+if (indicePoluicao >= 0.05 && indicePoluicao <= 0.25) {
+    console.log("Índice de poluição dentro dos limites aceitáveis.");
+} else if (indicePoluicao <= 0.3) {
+    console.log("1º Grupo de indústrias intimado a suspender atividades.");
+} else if (indicePoluicao <= 0.4) {
+    console.log("1º e 2º Grupos de indústrias intimados a suspender atividades.");
+} else if (indicePoluicao <= 0.5) {
+    console.log("Todos os grupos de indústrias notificados a paralisarem atividades.");
+} else {
+    console.log("Índice de poluição fora dos limites conhecidos.");
+}

@@ -1,0 +1,36 @@
+var quantidadePessoas = parseInt(prompt("Informe a quantidade de pessoas não monitoradas:"));
+
+var maiorAltura = -Infinity;
+var menorAltura = Infinity;
+var somaPesos = 0;
+var contadorPessoas = 0;
+
+while (contadorPessoas < quantidadePessoas) {
+    var peso = parseFloat(prompt("Informe o peso da pessoa (em kg) ou 0 para encerrar a leitura:"));
+    
+    if (peso === 0) {
+        break;
+    }
+
+    var altura = parseFloat(prompt("Informe a altura da pessoa (em metros):"));
+
+    if (altura > maiorAltura) {
+        maiorAltura = altura;
+    }
+    if (altura < menorAltura) {
+        menorAltura = altura;
+    }
+
+    somaPesos += peso;
+    contadorPessoas++;
+}
+
+if (contadorPessoas >= 2) {
+    var mediaPesos = somaPesos / contadorPessoas;
+    console.log("Média dos pesos informados: " + mediaPesos.toFixed(2) + " kg");
+} else {
+    console.log("É necessário informar pelo menos duas pessoas para calcular a média dos pesos.");
+}
+
+console.log("Maior altura informada: " + maiorAltura.toFixed(2) + " metros");
+console.log("Menor altura informada: " + menorAltura.toFixed(2) + " metros");
